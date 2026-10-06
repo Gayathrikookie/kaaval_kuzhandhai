@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaaval Kuzhandhai · காவல் குழந்தை</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#14070a;--card:#220d12;--ink:#fff;--mute:#ffd9dd;--pri:#ff4d5e;--pri2:#ff8a95;--acc:#ffd166;--red:#ff2d3f;--line:#4a1a22;--soft:#33121a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Noto Sans Tamil','Noto Sans',system-ui,sans-serif}
+html[lang=ta] e,html[lang=en] t{display:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:auto;display:flex;align-items:center;gap:10px;padding:10px 16px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:19px;color:var(--pri);display:flex;align-items:center;gap:8px;margin-right:auto}
+.logo span{background:var(--pri);color:#fff;border-radius:10px;padding:2px 8px}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button,.pill{border:0;background:none;color:var(--ink);font:inherit;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
+nav button.on,nav button:hover{background:var(--soft);color:var(--pri2)}
+.lang{border:1.5px solid var(--pri);color:var(--pri);background:none;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer}
+.exit{background:var(--red);color:#fff;border:0;border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}
+main{max-width:1080px;margin:auto;padding:20px 16px 60px}
+section{display:none}section.on{display:block}
+.hero{background:linear-gradient(135deg,var(--pri),#134e4a);color:#fff;border-radius:24px;padding:40px 28px;margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,44px);line-height:1.2}
+.hero p{max-width:620px;opacity:.95;margin:0 0 18px}
+.btn{display:inline-block;background:var(--acc);color:#2b1a00;text-decoration:none;border:0;font:inherit;font-weight:700;padding:12px 22px;border-radius:12px;cursor:pointer;margin:4px 6px 4px 0}
+.btn.alt{background:var(--card);color:var(--pri2);border:1.5px solid var(--pri)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px;color:var(--pri2)}
+.card .ic{font-size:30px}
+h2{font-size:26px;margin:6px 0 4px;color:var(--pri2)}
+.sub{color:var(--mute);margin:0 0 18px}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.note{background:#fff7e0;color:#5b3d00;border-left:5px solid var(--acc);border-radius:10px;padding:12px 16px;margin:16px 0}
+.stage{background:linear-gradient(#cdeff0,#eaf9f4);border-radius:22px;min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:#12302f;overflow:hidden}
+.stage .big{font-size:78px;animation:bob 1.4s ease-in-out infinite}
+.stage .big.stop{animation:pulse 1s ease-in-out infinite}
+.stage p{font-size:19px;font-weight:600;margin:8px 0 0;max-width:460px}
+.dots{display:flex;gap:6px;justify-content:center;margin:12px 0}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--pri)}
+@keyframes bob{50%{transform:translateY(-14px)}}@keyframes pulse{50%{transform:scale(1.18)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;cursor:pointer}
+.chip.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.mood button{font-size:34px;background:none;border:2px solid transparent;border-radius:14px;cursor:pointer}.mood button.on{border-color:var(--pri);background:var(--soft)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt.ok{border-color:#16a34a;background:#dcfce7;color:#14532d}.opt.no{border-color:#dc2626;background:#fee2e2;color:#7f1d1d}
+.rec{width:110px;height:110px;border-radius:50%;border:0;background:var(--pri);color:#fff;font-size:44px;cursor:pointer;display:block;margin:12px auto}
+.rec.live{background:var(--red);animation:pulse 1s infinite}
+.help{display:flex;flex-wrap:wrap;gap:12px}.help a{flex:1 1 200px;text-decoration:none;background:var(--card);border:2px solid var(--pri);border-radius:16px;padding:16px;text-align:center;color:var(--ink)}
+.help b{display:block;font-size:30px;color:var(--pri2)}
+.hero{background:linear-gradient(135deg,#0c4a6e,#1e1b4b);border:1px solid var(--line)}.logo span{color:#04121f}.chip.on{color:#04121f}.note{background:#2a2110;color:#fde7a8}.rec{color:#04121f}.rec.live{color:#fff}
+.stage{background:radial-gradient(circle at 50% 35%,#17375f,#0a1220);color:#fff;min-height:0;padding:12px}.stage svg{max-width:560px;display:block}.stage p{font-size:19px;font-weight:700;margin:6px 0 4px}.prog{height:6px;background:var(--line);border-radius:9px;margin:12px 0;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--pri)}
+.light{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}.light div{border-radius:14px;padding:12px;font-weight:600;border:2px solid}.g{border-color:#22c55e;background:#0f2a1c}.y{border-color:#fbbf24;background:#2a2110}.r{border-color:#ef4444;background:#2d1215}
+.fl{animation:fl 3s ease-in infinite;opacity:0}@keyframes fl{0%{opacity:0;transform:translateY(20px)}30%{opacity:1}100%{opacity:0;transform:translateY(-40px)}}
+.pop{animation:popin .6s both;transform-box:fill-box;transform-origin:center}@keyframes popin{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}.pls{animation:pulse 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+input[type=text],input[type=number]{background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px;font:inherit;width:46%}
+body{font-weight:600;color:#fff}h2,h3,.hero h1,.logo{font-weight:800}h2{color:#fff;font-size:30px}.card h3{color:#ff8a95}.sub,li,p{color:#ffe3e6}.hero p{color:#fff}
+.hero{background:linear-gradient(135deg,#9d0208,#370617)}.stage{background:radial-gradient(circle at 50% 35%,#5a0f1f,#14070a)}.logo span{background:#d90429;color:#fff}.logo{color:#fff}
+.btn{background:#d90429;color:#fff}.btn.alt{background:transparent;color:#fff;border:1.5px solid #ff4d5e}.exit{background:#fff;color:#8d0801}.chip.on{color:#fff}.rec{background:#d90429;color:#fff}.rec.live{background:#fff;color:#d90429}.prog i{background:#ff4d5e}nav button.on,nav button:hover{color:#fff;background:#4a1a22}.lang{color:#fff;border-color:#ff4d5e}.help a{border-color:#ff4d5e}.help b{color:#ff8a95}
+input[type=text],input[type=number]{color:#fff}
+.quote{margin:22px 0;padding:26px 28px 26px 34px;border-radius:20px;background:linear-gradient(135deg,#3a0a14,#220d12);border:1px solid var(--line);border-left:8px solid #ff2d3f;position:relative}
+.quote:before{content:"\201C";position:absolute;top:-6px;left:12px;font-size:80px;color:#ff4d5e;font-family:Georgia,serif;line-height:1}
+.quote q{display:block;font-size:clamp(21px,3.4vw,30px);font-weight:800;line-height:1.35;color:#fff;quotes:none}.quote small{display:block;margin-top:10px;color:#ff8a95;font-weight:700;letter-spacing:.5px}
+#botb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#d90429;color:#fff;border:2px solid #fff;border-radius:999px;padding:10px 18px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 6px 24px rgba(217,4,41,.55)}
+.mas{display:inline-block;font-size:26px;animation:wig 2s ease-in-out infinite}@keyframes wig{50%{transform:translateY(-5px) rotate(-8deg)}}
+#botp{position:fixed;right:16px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:min(380px,calc(100vw - 32px));max-height:72vh;z-index:30;background:var(--card);border:2px solid #ff4d5e;border-radius:20px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+#botp[hidden]{display:none}
+.bh{display:flex;align-items:center;gap:8px;padding:10px 14px;background:linear-gradient(135deg,#9d0208,#370617)}.bh b{flex:1;font-weight:800}.bh button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+#log{flex:1;overflow-y:auto;padding:12px;min-height:150px}
+.m{max-width:88%;margin:6px 0;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.5;font-weight:600;color:#fff}.m.bot{background:var(--soft);border-bottom-left-radius:4px}.m.user{background:#d90429;margin-left:auto;border-bottom-right-radius:4px}
+.ar{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.ar a,.ar button{background:#fff;color:#8d0801;border:0;border-radius:999px;padding:6px 12px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;font-size:14px}
+#qc{padding:6px 12px}#qc .chip{font-size:14px;padding:6px 12px}
+.bi{display:flex;gap:6px;padding:8px 12px}#bin{flex:1;width:auto}.bi .btn{margin:0;padding:8px 16px}
+.bf{font-size:12px;text-align:center;padding:0 12px 10px;color:#ffd9dd}
+.bu{position:absolute;bottom:90px;font-size:26px;pointer-events:none;animation:rise 2s ease-out forwards}@keyframes rise{from{opacity:1;transform:translateY(0) scale(.6)}to{opacity:0;transform:translateY(-220px) scale(1.4)}}
+#call{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;padding:16px}#call[hidden]{display:none}.cb{background:var(--card);border:2px solid #ff4d5e;border-radius:20px;padding:24px;text-align:center;max-width:360px;width:100%}#cn{font-size:52px;font-weight:800;color:#fff;margin:4px 0 12px}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:24px 16px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<div class="logo"><span>🛡️</span><e>Kaaval Kuzhandhai</e><t>காவல் குழந்தை</t></div>
+<nav id="nav">
+<button data-s="home" class="on"><e>Home</e><t>முகப்பு</t></button>
+<button data-s="students"><e>Students</e><t>மாணவர்கள்</t></button>
+<button data-s="parents"><e>Parents</e><t>பெற்றோர்</t></button>
+<button data-s="teachers"><e>Teachers</e><t>ஆசிரியர்கள்</t></button>
+<button data-s="voice"><e>🎙️ Voice</e><t>🎙️ குரல்</t></button>
+<button data-s="help"><e>Help</e><t>உதவி</t></button>
+</nav>
+<button class="lang" id="lang">தமிழ் / EN</button>
+<button class="exit" id="exit"><e>Quick Exit</e><t>வெளியேறு</t></button>
+</div></header>
+
+<main>
+<section id="home" class="on">
+<div class="hero">
+<h1><e>Every child safe.<br>Every voice heard.</e><t>ஒவ்வொரு குழந்தையும் பாதுகாப்பாக.<br>ஒவ்வொரு குரலும் கேட்கப்படும்.</t></h1>
+<p><e>A body-safety and complaint platform for Tamil Nadu schools, built for students, parents and teachers together.</e><t>தமிழ்நாட்டுப் பள்ளிகளுக்கான உடல் பாதுகாப்பு மற்றும் புகார் தளம் — மாணவர்கள், பெற்றோர், ஆசிரியர்களுக்காக.</t></p>
+<a class="btn formlink" target="_blank" rel="noopener"><e>Report complaint</e><t>புகார் அளி</t></a>
+<button class="btn alt go" data-s="voice"><e>🎙️ Tell with voice</e><t>🎙️ குரலில் சொல்லுங்கள்</t></button>
+</div>
+<div class="quote"><q><e>A child's voice is the strongest alarm. Listen. Believe. Protect.</e><t>குழந்தையின் குரலே மிகப் பெரிய எச்சரிக்கை மணி. கேளுங்கள். நம்புங்கள். காப்பாற்றுங்கள்.</t></q><small><e>EVERY CHILD DESERVES TO FEEL SAFE</e><t>ஒவ்வொரு குழந்தையும் பாதுகாப்பாக உணர உரிமை உண்டு</t></small></div>
+<div class="grid">
+<div class="card"><div class="ic">🧒</div><h3><e>Students</e><t>மாணவர்கள்</t></h3><p><e>Animated story, No-Go-Tell rules, trusted adults, quiz.</e><t>அனிமேஷன் கதை, "வேண்டாம்-போ-சொல்" விதிகள், நம்பிக்கைக்குரிய பெரியவர்கள், வினாடி வினா.</t></p><button class="btn alt go" data-s="students"><e>Open</e><t>திற</t></button></div>
+<div class="card"><div class="ic">👨‍👩‍👧</div><h3><e>Parents</e><t>பெற்றோர்</t></h3><p><e>Teach body safety at home, spot warning signs.</e><t>வீட்டிலேயே உடல் பாதுகாப்பு கற்பிக்கவும், எச்சரிக்கை அறிகுறிகளை அறியவும்.</t></p><button class="btn alt go" data-s="parents"><e>Open</e><t>திற</t></button></div>
+<div class="card"><div class="ic">👩‍🏫</div><h3><e>Teachers</e><t>ஆசிரியர்கள்</t></h3><p><e>Session plans, observation checklist, complaint on behalf of a student.</e><t>வகுப்புத் திட்டங்கள், கவனிப்புப் பட்டியல், மாணவர் சார்பில் புகார்.</t></p><button class="btn alt go" data-s="teachers"><e>Open</e><t>திற</t></button></div>
+</div>
+<div class="note"><e><b>Prototype notice:</b> this is a student research prototype. Do not use it for real disclosures until a school's safeguarding committee has adopted and secured it. In danger now? Call 1098 or 112.</e><t><b>முன்மாதிரி அறிவிப்பு:</b> இது மாணவர் ஆய்வு முன்மாதிரி. பள்ளி பாதுகாப்புக் குழு ஏற்று பாதுகாக்கும் வரை உண்மையான புகார்களுக்குப் பயன்படுத்த வேண்டாம். ஆபத்தில் இருந்தால் உடனே 1098 அல்லது 112 அழைக்கவும்.</t></div>
+</section>
+
+<section id="students">
+<h2><e>For Students</e><t>மாணவர்களுக்கு</t></h2><p class="sub"><e>Your body belongs to you. It is never your fault.</e><t>உன் உடல் உனக்கே சொந்தம். இது ஒருபோதும் உன் தவறு அல்ல.</t></p>
+<div class="card"><h3><e>🎬 Good Touch · Bad Touch story</e><t>🎬 நல்ல தொடுதல் · கெட்ட தொடுதல் கதை</t></h3>
+<div class="stage"><svg id="svg" viewBox="0 0 400 240" width="100%" role="img"></svg><p id="cap"></p></div><div class="prog"><i id="pbar"></i></div>
+<button class="btn" id="play"><e>⏸ Pause</e><t>⏸ நிறுத்து</t></button><button class="btn alt" id="next"><e>Next ▶</e><t>அடுத்து ▶</t></button><button class="btn alt" id="speak"><e>🔊 Listen</e><t>🔊 கேள்</t></button>
+<div class="light"><div class="g">🟢 <e>Safe touch: hugs from family, high-fives. Feels happy.</e><t>பாதுகாப்பானது: குடும்ப அணைப்பு, கைதட்டல். மகிழ்ச்சி தரும்.</t></div><div class="y">🟡 <e>Confusing touch: feels odd or secret. Tell an adult.</e><t>குழப்பமானது: விசித்திரமாக/ரகசியமாக இருந்தால் பெரியவரிடம் சொல்.</t></div><div class="r">🔴 <e>Unsafe touch: scary or hurts. NO, GO, TELL.</e><t>பாதுகாப்பற்றது: பயம்/வலி. வேண்டாம், போ, சொல்.</t></div></div></div>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3><e>NO · GO · TELL</e><t>வேண்டாம் · போ · சொல்</t></h3><ul><li><e><b>NO</b> — say it loudly.</e><t><b>வேண்டாம்</b> — சத்தமாகச் சொல்.</t></li><li><e><b>GO</b> — move away to a safe place.</e><t><b>போ</b> — பாதுகாப்பான இடத்துக்குச் செல்.</t></li><li><e><b>TELL</b> — a trusted adult. Keep telling until someone listens.</e><t><b>சொல்</b> — நம்பிக்கையான பெரியவரிடம். யாராவது கேட்கும் வரை சொல்லிக்கொண்டே இரு.</t></li><li><e>No secrets about touching.</e><t>தொடுதல் பற்றி ரகசியம் இல்லை.</t></li></ul></div>
+<div class="card"><h3><e>My trusted adults</e><t>என் நம்பிக்கையான பெரியவர்கள்</t></h3><div class="chips" id="trust"></div><p class="sub" id="trustmsg"></p></div>
+<div class="card"><h3><e>How am I today?</e><t>இன்று நான் எப்படி?</t></h3><div class="mood" id="mood"><button>😊</button><button>😐</button><button>😢</button><button>😨</button><button>😠</button></div><p class="sub"><e>If you feel sad or scared, tell an adult you trust.</e><t>சோகமாகவோ பயமாகவோ இருந்தால் நம்பிக்கையான பெரியவரிடம் சொல்.</t></p></div>
+</div>
+<p><a class="btn formlink" target="_blank" rel="noopener"><e>Report complaint</e><t>புகார் அளி</t></a> <button class="btn alt go" data-s="voice"><e>🎙️ Use my voice</e><t>🎙️ குரலில் சொல்</t></button></p>
+</section>
+
+<section id="parents">
+<h2><e>For Parents</e><t>பெற்றோருக்கு</t></h2><p class="sub"><e>Children who can talk to you are safer.</e><t>உங்களிடம் பேசக்கூடிய குழந்தைகள் அதிக பாதுகாப்பானவர்கள்.</t></p>
+<div class="grid">
+<div class="card"><h3><e>Teach at home</e><t>வீட்டில் கற்பியுங்கள்</t></h3><ul><li><e>Use correct body-part names, calmly.</e><t>உடல் உறுப்புகளின் சரியான பெயர்களை அமைதியாகப் பயன்படுத்துங்கள்.</t></li><li><e>Teach safe, unsafe and confusing touch.</e><t>பாதுகாப்பான, பாதுகாப்பற்ற, குழப்பமான தொடுதலை விளக்குங்கள்.</t></li><li><e>"No secrets" about touching or photos.</e><t>தொடுதல், படங்கள் பற்றி "ரகசியம் இல்லை" என்று சொல்லுங்கள்.</t></li><li><e>Child may say no, even to relatives.</e><t>உறவினர்களிடமும் "வேண்டாம்" என்று சொல்ல குழந்தைக்கு உரிமை உண்டு.</t></li></ul></div>
+<div class="card"><h3><e>Conversation starters</e><t>பேச்சைத் தொடங்க</t></h3><ul><li><e>"Who are the people you feel safe with?"</e><t>"யாருடன் இருக்கும்போது நீ பாதுகாப்பாக உணர்கிறாய்?"</t></li><li><e>"Has anything made you feel uncomfortable?"</e><t>"ஏதாவது உனக்கு அசௌகரியமாக இருந்ததா?"</t></li><li><e>"You can always tell me. I will believe you."</e><t>"எப்போதும் என்னிடம் சொல்லலாம். நான் நம்புவேன்."</t></li></ul></div>
+<div class="card"><h3><e>Warning signs</e><t>எச்சரிக்கை அறிகுறிகள்</t></h3><ul><li><e>Sudden fear of a person or place.</e><t>ஒரு நபர் அல்லது இடத்தின் மீது திடீர் பயம்.</t></li><li><e>Sleep, appetite or mood changes.</e><t>தூக்கம், பசி, மனநிலை மாற்றம்.</t></li><li><e>Withdrawal, drop in school marks.</e><t>தனிமை, படிப்பில் வீழ்ச்சி.</t></li><li><e>Secretive about phone or gifts.</e><t>ஃபோன் அல்லது பரிசுகள் பற்றி ரகசியம்.</t></li></ul></div>
+<div class="card"><h3><e>If your child tells you</e><t>குழந்தை சொன்னால்</t></h3><ul><li><e>Stay calm. Believe. Say "It is not your fault."</e><t>அமைதியாக இருங்கள். நம்புங்கள். "இது உன் தவறு அல்ல" என்று சொல்லுங்கள்.</t></li><li><e>Do not question for details.</e><t>விவரங்களுக்காகத் துருவிக் கேட்காதீர்கள்.</t></li><li><e>Call Childline 1098 or police 112.</e><t>Childline 1098 அல்லது காவல்துறை 112 அழையுங்கள்.</t></li></ul></div>
+</div>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3><e>Family safety plan</e><t>குடும்பப் பாதுகாப்புத் திட்டம்</t></h3><div id="fam"></div></div>
+<div class="card"><h3><e>Online safety</e><t>இணையப் பாதுகாப்பு</t></h3><div id="onl"></div><p class="sub"><e>Report cybercrime: 1930 or cybercrime.gov.in</e><t>சைபர் குற்றப் புகார்: 1930 அல்லது cybercrime.gov.in</t></p></div>
+<div class="card"><h3><e>Talk by age</e><t>வயதுக்கேற்ப பேசுங்கள்</t></h3><ul><li><e><b>3-7:</b> "My body is mine." Simple songs and stories.</e><t><b>3-7:</b> "என் உடல் எனக்கே." எளிய பாடல், கதை.</t></li><li><e><b>8-12:</b> Safe/unsafe touch, trusted adults, bullying.</e><t><b>8-12:</b> பாதுகாப்பான/பாதுகாப்பற்ற தொடுதல், நம்பிக்கையானவர்கள்.</t></li><li><e><b>13-18:</b> Consent, grooming, sexting, healthy relationships.</e><t><b>13-18:</b> ஒப்புதல், நட்பாக ஏமாற்றுதல், ஆபாசப் படப் பகிர்வு, ஆரோக்கிய உறவுகள்.</t></li></ul></div>
+<div class="card"><h3><e>Weekly 10-minute check-in</e><t>வாராந்திர 10 நிமிடப் பேச்சு</t></h3><ul><li><e>Best and worst part of your week?</e><t>இந்த வாரத்தின் சிறந்த/மோசமான பகுதி?</t></li><li><e>Who made you feel safe or unsafe?</e><t>யார் பாதுகாப்பாக/பாதுகாப்பற்றதாக உணர வைத்தார்?</t></li><li><e>Anything you want to tell me?</e><t>என்னிடம் சொல்ல ஏதாவது?</t></li></ul></div>
+</div>
+<p><a class="btn formlink" target="_blank" rel="noopener"><e>Report complaint</e><t>புகார் அளி</t></a></p>
+</section>
+
+<section id="teachers">
+<h2><e>For Teachers</e><t>ஆசிரியர்களுக்கு</t></h2><p class="sub"><e>Teach, observe, respond, report.</e><t>கற்பியுங்கள், கவனியுங்கள், பதிலளியுங்கள், புகாரளியுங்கள்.</t></p>
+<div class="grid">
+<div class="card"><h3><e>Classroom session plan (30 min)</e><t>வகுப்பறை அமர்வு (30 நிமிடம்)</t></h3><ul><li><e>5 min · Ground rules, "you can skip or stop".</e><t>5 நிமி · விதிகள்: "தவிர்க்கலாம், நிறுத்தலாம்".</t></li><li><e>10 min · Play the animated story (Students page).</e><t>10 நிமி · அனிமேஷன் கதை (மாணவர் பக்கம்).</t></li><li><e>10 min · Safe / unsafe / confusing touch cards.</e><t>10 நிமி · பாதுகாப்பான / பாதுகாப்பற்ற / குழப்பமான தொடுதல் அட்டைகள்.</t></li><li><e>5 min · No-Go-Tell, name trusted adults, helplines.</e><t>5 நிமி · வேண்டாம்-போ-சொல், நம்பிக்கையான பெரியவர்கள், உதவி எண்கள்.</t></li></ul><p class="sub"><e>Classes 1-5: stories and songs. 6-8: scenarios. 9-12: grooming, online safety, consent.</e><t>1-5: கதை, பாடல். 6-8: சூழல் விளக்கம். 9-12: நட்பாக ஏமாற்றுதல், இணையப் பாதுகாப்பு, ஒப்புதல்.</t></p></div>
+<div class="card"><h3><e>Observation checklist</e><t>கவனிப்புப் பட்டியல்</t></h3><p class="sub"><e>Tick what you notice. Changes have many causes, so do not diagnose.</e><t>கவனித்ததைக் குறிக்கவும். மாற்றங்களுக்குப் பல காரணங்கள் உண்டு; முடிவு செய்யாதீர்கள்.</t></p><div id="chk"></div><p id="chkres" class="note" style="display:none"></p></div>
+<div class="card"><h3><e>If a student discloses</e><t>மாணவர் சொன்னால்</t></h3><ul><li><e>Listen, believe, stay calm.</e><t>கேளுங்கள், நம்புங்கள், அமைதியாக இருங்கள்.</t></li><li><e>Never promise secrecy. Don't investigate.</e><t>ரகசியம் காக்கிறேன் என்று உறுதி தராதீர்கள். விசாரிக்காதீர்கள்.</t></li><li><e>Report to the committee; POCSO Sec. 19 requires reporting to police.</e><t>குழுவுக்குத் தெரிவியுங்கள்; POCSO பிரிவு 19 படி காவல்துறைக்குப் புகாரளிக்க வேண்டும்.</t></li></ul></div>
+<div class="card"><h3><e>Complaint on behalf of a student</e><t>மாணவர் சார்பில் புகார்</t></h3><p><e>Use the form and choose "on behalf of a student". Record only what was said or seen.</e><t>படிவத்தில் "மாணவர் சார்பில்" என்பதைத் தேர்வு செய்யுங்கள். சொன்னதை/பார்த்ததை மட்டும் பதிவு செய்யுங்கள்.</t></p><a class="btn formlink" target="_blank" rel="noopener"><e>Report complaint</e><t>புகார் அளி</t></a></div>
+</div>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3><e>Session tracker</e><t>அமர்வுப் பதிவு</t></h3><input type="text" id="scls" placeholder="Class / வகுப்பு"> <input type="number" id="sn" placeholder="Present / வருகை"><br><button class="btn" id="sadd"><e>Add session</e><t>சேர்</t></button><ul id="sl"></ul></div>
+<div class="card"><h3><e>Class safety audit</e><t>வகுப்பறைப் பாதுகாப்புத் தணிக்கை</t></h3><div id="aud2"></div></div>
+<div class="card"><h3><e>Documenting a concern</e><t>புகாரைப் பதிவு செய்தல்</t></h3><ul><li><e><b>Do:</b> note exact words, date, time, who you told.</e><t><b>செய்:</b> சொன்ன சொற்கள், தேதி, நேரம், யாரிடம் தெரிவித்தீர்கள் என்பதைக் குறி.</t></li><li><e><b>Don't:</b> ask leading questions or confront the accused.</e><t><b>செய்யாதே:</b> தூண்டும் கேள்விகள் கேட்காதே; குற்றம் சாட்டப்பட்டவரிடம் நேரில் கேட்காதே.</t></li><li><e><b>Don't:</b> share with anyone outside the committee.</e><t><b>செய்யாதே:</b> குழுவுக்கு வெளியே பகிராதே.</t></li></ul></div>
+<div class="card"><h3><e>Safe classroom habits</e><t>பாதுகாப்பான வகுப்புப் பழக்கங்கள்</t></h3><ul><li><e>No closed-door one-to-one meetings.</e><t>கதவு மூடிய தனி சந்திப்பு வேண்டாம்.</t></li><li><e>Respect "no" from every child.</e><t>எந்தக் குழந்தையின் "வேண்டாம்" என்பதையும் மதியுங்கள்.</t></li><li><e>Display helplines and committee names.</e><t>உதவி எண்கள், குழுப் பெயர்களைக் காட்சிப்படுத்துங்கள்.</t></li></ul></div>
+</div>
+</section>
+
+<section id="voice">
+<h2><e>🎙️ Tell with your voice</e><t>🎙️ குரலில் சொல்லுங்கள்</t></h2><p class="sub"><e>Can't type? Press the big button and talk. Up to 45 seconds. You can stop any time.</e><t>தட்டச்சு தெரியவில்லையா? பெரிய பொத்தானை அழுத்திப் பேசுங்கள். 45 வினாடிகள் வரை. எப்போது வேண்டுமானாலும் நிறுத்தலாம்.</t></p>
+<div class="card" style="text-align:center;max-width:560px;margin:auto">
+<div id="step1"><p><b><e>Step 1: allow the microphone</e><t>படி 1: மைக்கை அனுமதிக்கவும்</t></b></p><button class="btn" id="allow"><e>🎤 Allow microphone</e><t>🎤 மைக்கை அனுமதி</t></button></div>
+<div id="step2" style="display:none"><button class="rec" id="rec" aria-label="record">🎙️</button></div>
+<p id="recmsg" class="sub"><e>Allow the microphone first.</e><t>முதலில் மைக்கை அனுமதிக்கவும்.</t></p>
+<label class="btn" style="cursor:pointer"><e>📱 Use phone voice recorder</e><t>📱 ஃபோன் குரல் பதிவி</t><input type="file" id="fil" accept="audio/*" capture hidden></label>
+<audio id="aud" controls style="display:none;width:100%"></audio>
+<div id="sendbox" style="display:none"><button class="btn" id="send"><e>Report complaint</e><t>புகார் அளி</t></button><button class="btn alt" id="redo"><e>Record again</e><t>மீண்டும் பதிவு</t></button></div>
+<p id="sendmsg" class="sub"></p>
+<p class="sub"><e>You don't need to say details. Just say what you want a trusted adult to know. It is not your fault.</e><t>விவரங்கள் சொல்ல வேண்டாம். நம்பிக்கையான பெரியவர் அறிய வேண்டியதை மட்டும் சொல்லுங்கள். இது உங்கள் தவறு அல்ல.</t></p></div>
+<div class="note"><e><b>Prototype:</b> voice notes are saved to this page's backend only for demonstration. Use dummy recordings only: other demo users may be able to hear them. A real deployment needs a school-owned encrypted backend, a named committee reader, daily checks and escalation to Childline/police.</e><t><b>முன்மாதிரி:</b> குரல் பதிவுகள் செயல்விளக்கத்துக்காக மட்டுமே சேமிக்கப்படுகின்றன. போலிப் பதிவுகளை மட்டும் பயன்படுத்தவும்; மற்ற டெமோ பயனர்கள் அவற்றைக் கேட்கக்கூடும். உண்மையான பயன்பாட்டுக்கு பள்ளிக்குச் சொந்தமான குறியாக்கப் பின்தளம், பெயரிடப்பட்ட குழு உறுப்பினர், தினசரி சரிபார்ப்பு, Childline/காவல்துறைக்கு உயர்த்துதல் தேவை.</t></div>
+</section>
+
+<section id="help">
+<h2><e>Get help now</e><t>இப்போதே உதவி பெறுங்கள்</t></h2><p class="sub"><e>Free. Talk to someone you trust.</e><t>இலவசம். நம்பிக்கையானவரிடம் பேசுங்கள்.</t></p>
+<div class="help"><a href="tel:1098"><b>1098</b>Childline</a><a href="tel:112"><b>112</b><e>Police</e><t>காவல்துறை</t></a><a href="tel:14417"><b>14417</b><e>TN school helpline</e><t>பள்ளிக் கல்வி உதவி எண்</t></a></div>
+<p style="margin-top:18px"><a class="btn formlink" target="_blank" rel="noopener"><e>Report complaint</e><t>புகார் அளி</t></a></p>
+</section>
+</main>
+<footer><e>Kaaval Kuzhandhai · Student research prototype · Does not replace police, Childline or legal processes.</e><t>காவல் குழந்தை · மாணவர் ஆய்வு முன்மாதிரி · காவல்துறை, Childline, சட்ட நடைமுறைகளுக்கு மாற்றல்ல.</t></footer>
+
+<button id="botb" aria-label="Assistant"><span class="mas" id="mas">🛡️</span> <e>Ask Kaaval</e><t>காவலனிடம் கேள்</t></button>
+<div id="botp" hidden><div class="bh"><span class="mas" id="mas2">🛡️</span><b><e>Kaaval Helper</e><t>காவல் உதவியாளர்</t></b><button id="botx" aria-label="close">✕</button></div>
+<div id="log"></div><div id="qc" class="chips"></div><div class="bi"><input type="text" id="bin"><button class="btn" id="bgo">➤</button></div>
+<div class="bf"><e>I am a helper, not a person. In danger? Call 1098 or 112.</e><t>நான் உதவியாளர், மனிதர் அல்ல. ஆபத்தில் இருந்தால் 1098 அல்லது 112 அழை.</t></div></div>
+<div id="call" hidden><div class="cb"><p><b><e>Call this number</e><t>இந்த எண்ணை அழைக்கவும்</t></b></p><div id="cn"></div>
+<a class="btn" id="calla" target="_blank" rel="noopener"><e>📞 Call now</e><t>📞 அழை</t></a><button class="btn alt" id="callc"><e>Copy number</e><t>எண்ணை நகலெடு</t></button><button class="btn alt" id="callx"><e>Close</e><t>மூடு</t></button>
+<p class="sub" id="cmsg"></p><p class="sub"><e>If calling does not start, open your phone keypad and dial this number.</e><t>அழைப்பு தொடங்கவில்லை என்றால் ஃபோன் கீபேடில் இந்த எண்ணை அழுத்தவும்.</t></p></div></div>
+<script>
+const FORM="https://docs.google.com/forms/d/e/1FAIpQLSdC-Iu8efT6BHdd_eg7PWwho16kRRw9eBQUP4BWu4LYi0TrRQ/viewform";
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let L="en";const T=(a,b)=>L==="en"?a:b;
+$$(".formlink").forEach(a=>a.href=FORM);
+function show(id){if(id==="students"&&!window.st){window.st=1;setTimeout(pl,50)}$$("section").forEach(s=>s.classList.toggle("on",s.id===id));$$("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.s===id));scrollTo(0,0)}
+$$("#nav button,.go").forEach(b=>b.onclick=()=>show(b.dataset.s));
+$("#lang").onclick=()=>{L=L==="en"?"ta":"en";document.documentElement.lang=L;build()};
+function out(){location.replace("https://www.google.com")}
+$("#exit").onclick=out;let esc=0;addEventListener("keydown",e=>{if(e.key==="Escape"){if(++esc>=2)out();setTimeout(()=>esc=0,900)}});
+/* story */
+const P=(x,y,k,c,sad)=>`<g transform="translate(${x},${y}) scale(${k})"><circle cy="-52" r="16" fill="#fcd9b6"/><rect x="-16" y="-34" width="32" height="48" rx="14" fill="${c}"/><rect x="-12" y="12" width="9" height="26" rx="4" fill="#475569"/><rect x="3" y="12" width="9" height="26" rx="4" fill="#475569"/><circle cx="-5" cy="-54" r="2" fill="#222"/><circle cx="5" cy="-54" r="2" fill="#222"/><path d="${sad?"M-6 -44 q6 -5 12 0":"M-6 -47 q6 6 12 0"}" stroke="#222" fill="none" stroke-width="1.8"/></g>`;
+const G=`<ellipse cx="200" cy="228" rx="190" ry="10" fill="#3a0a14"/>`;
+const Z=(x,y,k)=>`<g transform="translate(${x},${y}) scale(${k})"><g class="pls"><rect x="-17" y="-34" width="34" height="17" rx="6" fill="#ff2d3f" opacity=".65"/><rect x="-17" y="2" width="34" height="24" rx="6" fill="#ff2d3f" opacity=".65"/></g></g>`;
+const X=(x,y,t,sz)=>`<text x="${x}" y="${y}" font-size="${sz||13}" font-weight="800" fill="#fff">${t}</text>`;
+const sc=[()=>G+P(120,150,2,"#3b82f6")+[0,1,2].map(i=>`<text class="fl" x="${70+i*30}" y="60" font-size="22" style="animation-delay:${i*.9}s">❤️</text>`).join("")+`<g class="pop"><rect x="215" y="70" width="170" height="44" rx="22" fill="#fff"/><text x="300" y="99" text-anchor="middle" font-size="18" font-weight="800" fill="#9d0208">${T("My body is mine!","என் உடல் எனக்கே!")}</text></g>`,
+()=>G+P(110,150,2.1,"#3b82f6")+Z(110,150,2.1)+X(200,80,T("PRIVATE PARTS","தனிப்பட்ட பாகங்கள்"),19)+X(200,106,T("Covered by underwear","உள்ளாடை மறைக்கும் இடங்கள்"))+X(200,124,T("or a swimsuit","அல்லது நீச்சலுடை"))+`<text class="pls" x="330" y="190" font-size="46">🔒</text>`,
+()=>G+P(90,150,1.9,"#3b82f6")+Z(90,150,1.9)+[250,310,365].map(x=>P(x,165,.8,"#64748b")+`<text class="pls" x="${x-12}" y="115" font-size="30" fill="#ff2d3f">✖</text>`).join("")+X(215,212,T("Stranger","அந்நியர்"),12)+X(285,212,T("Relative","உறவினர்"),12)+X(340,212,T("Teacher","ஆசிரியர்"),12),
+()=>G+[[70,"🩺",T("Doctor, for health","உடல்நலத்துக்கு மருத்துவர்")],[200,"👨‍👩‍👧",T("Trusted adult present","நம்பிக்கையான பெரியவர் உடனிருக்க")],[330,"🗣️",T("They tell you first","முதலில் உனக்குச் சொல்வார்கள்")]].map((a,i)=>`<g class="pop" style="animation-delay:${i*1.4}s"><circle cx="${a[0]}" cy="95" r="46" fill="#3a0a14" stroke="#ff4d5e" stroke-width="3"/><text x="${a[0]}" y="110" text-anchor="middle" font-size="42">${a[1]}</text>${X(a[0]-58,170,a[2],12)}</g>`).join(""),
+()=>G+P(125,160,1.5,"#3b82f6")+P(275,160,1.5,"#f59e0b")+`<path d="M145 108 L192 82 M255 108 L208 82" stroke="#fcd9b6" stroke-width="10" stroke-linecap="round"/><circle class="pls" cx="200" cy="80" r="17" fill="#22c55e" opacity=".8"/><g class="pls"><circle cx="200" cy="30" r="22" fill="#16a34a"/><text x="200" y="40" text-anchor="middle" font-size="26" fill="#fff">✔</text></g>`+X(120,222,T("High-five  ·  Handshake","கைதட்டல்  ·  கைகுலுக்கல்"),14),
+()=>G+[[70,"#dc2626","✋",T("NO","வேண்டாம்")],[200,"#2563eb","🏃",T("GO","போ")],[330,"#16a34a","🗣️",T("TELL","சொல்")]].map((a,i)=>`<g class="pop" style="animation-delay:${i*1.2}s"><circle cx="${a[0]}" cy="100" r="48" fill="${a[1]}"/><text x="${a[0]}" y="114" text-anchor="middle" font-size="40">${a[2]}</text><text x="${a[0]}" y="175" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">${a[3]}</text></g>`).join(""),
+()=>G+`<path class="pls" d="M200 15 L290 45 V120 Q290 190 200 225 Q110 190 110 120 V45 Z" fill="#ff2d3f" opacity=".28"/>`+P(200,165,1.3,"#f59e0b")+P(60,170,1.2,"#3b82f6")+P(340,170,1.2,"#a855f7")+`<text class="fl" x="200" y="60" text-anchor="middle" font-size="26">⭐</text>`];
+const cap=[["Your body belongs to you. You decide who touches it.", "உன் உடல் உனக்கே சொந்தம். யார் தொடலாம் என்பதை நீ தீர்மானிக்கலாம்."], ["Private parts are the parts covered by underwear or a swimsuit.", "தனிப்பட்ட பாகங்கள் என்பவை உள்ளாடை அல்லது நீச்சலுடை மறைக்கும் இடங்கள்."], ["No one may touch them, look at them, or ask you to touch theirs. Not a stranger, relative or teacher.", "யாரும் அவற்றைத் தொடவோ பார்க்கவோ, தங்களைத் தொடச் சொல்லவோ கூடாது. அந்நியர், உறவினர், ஆசிரியர் யாராக இருந்தாலும்."], ["Only exception: a doctor or parent for health or cleaning, with a trusted adult present, and they tell you first.", "ஒரே விதிவிலக்கு: உடல்நலம் அல்லது சுத்தத்துக்காக மருத்துவர் அல்லது பெற்றோர், நம்பிக்கையான பெரியவர் முன்னிலையில், உனக்கு முதலில் சொல்லி."], ["Safe touches: a high-five, a handshake, a hug you want.", "பாதுகாப்பான தொடுதல்: கைதட்டல், கைகுலுக்கல், நீ விரும்பும் அணைப்பு."], ["If someone breaks these rules: say NO, GO away, TELL.", "யாராவது இந்த விதிகளை மீறினால்: வேண்டாம் சொல், விலகிப் போ, சொல்."], ["Tell trusted adults until someone listens. It is never your fault.", "நம்பிக்கையான பெரியவர்களிடம் யாராவது கேட்கும் வரை சொல். இது உன் தவறு அல்ல."]];
+let si=0,el=0,iv=null;
+function slide(){$("#svg").innerHTML=sc[si]();$("#cap").textContent=T(cap[si][0],cap[si][1])}
+function go(n){si=(n+sc.length)%sc.length;el=0;slide();$("#pbar").style.width="0"}
+function pl(){if(iv){clearInterval(iv);iv=null;$("#play").innerHTML="<e>▶ Play</e><t>▶ இயக்கு</t>"}else{$("#play").innerHTML="<e>⏸ Pause</e><t>⏸ நிறுத்து</t>";iv=setInterval(()=>{el+=100;if(el>=7500)go(si+1);$("#pbar").style.width=el/75+"%"},100)}}
+$("#play").onclick=pl;$("#next").onclick=()=>go(si+1);
+$("#speak").onclick=()=>{if(!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(T(cap[si][0],cap[si][1]));u.lang=L==="en"?"en-IN":"ta-IN";speechSynthesis.speak(u)};
+function mk(id,a){const d=$("#"+id),n=a.length;const cnt=document.createElement("p");cnt.className="sub";d.replaceChildren(...a.map((x,i)=>{const l=document.createElement("label");l.style.display="block";const c=document.createElement("input");c.type="checkbox";c.checked=!!(mk.s[id+i]);c.onchange=()=>{mk.s[id+i]=c.checked;up()};l.append(c," "+T(x[0],x[1]));return l}),cnt);function up(){cnt.textContent=a.filter((_,i)=>mk.s[id+i]).length+" / "+n}up()}
+mk.s={};
+function extra(){mk("fam",[["Choose a family code word","குடும்ப ரகசியக் குறிச்சொல்லைத் தேர்வு செய்யுங்கள்"],["Name 3 trusted adults together","3 நம்பிக்கையான பெரியவர்களை இணைந்து தேர்வு செய்யுங்கள்"],["Save 1098 and 112 in your phone","1098, 112 எண்களை ஃபோனில் சேமியுங்கள்"],["List who may pick up your child","குழந்தையை அழைத்துச் செல்லக்கூடியவர்களின் பட்டியல்"],["Hold a weekly check-in talk","வாராந்திரப் பேச்சு நடத்துங்கள்"]]);
+mk("onl",[["Keep devices in shared family areas","சாதனங்களைக் குடும்பப் பொது இடத்தில் வையுங்கள்"],["Know who your child chats with","குழந்தை யாருடன் பேசுகிறது என அறியுங்கள்"],["No photos or videos to strangers","அந்நியர்களுக்குப் படம்/வீடியோ வேண்டாம்"],["Turn on parental controls","பெற்றோர் கட்டுப்பாடுகளை இயக்குங்கள்"]]);
+mk("aud2",[["Complaint box is reachable and private","புகார்ப் பெட்டி எளிதில் அணுகக்கூடியதும் தனிப்பட்டதும்"],["Helpline posters in every class","ஒவ்வொரு வகுப்பிலும் உதவி எண் சுவரொட்டி"],["Committee names displayed","குழு உறுப்பினர் பெயர்கள் காட்சிப்படுத்தல்"],["Stairs and corridors well lit and supervised","படிக்கட்டு, நடைபாதை வெளிச்சம்/கண்காணிப்பு"],["Staff trained on POCSO this year","இந்த ஆண்டு POCSO பயிற்சி பெற்ற ஆசிரியர்கள்"]])}
+const sess=[];$("#sadd").onclick=()=>{const c=$("#scls").value.trim();if(!c)return;sess.push(new Date().toLocaleDateString()+" · "+c+" · "+($("#sn").value||"-"));$("#sl").replaceChildren(...sess.map(t=>{const l=document.createElement("li");l.textContent=t;return l}))};
+/* assistant */
+const KB={
+priv:{en:"Private parts are the parts covered by your underwear or swimsuit. They belong only to you. No one may touch them, look at them, or ask you to touch theirs. A doctor or parent may help for health or cleaning, with a trusted adult present, and they tell you first.",ta:"தனிப்பட்ட பாகங்கள் என்பவை உள்ளாடை அல்லது நீச்சலுடை மறைக்கும் இடங்கள். அவை உனக்கே சொந்தம். யாரும் அவற்றைத் தொடவோ பார்க்கவோ, தங்களைத் தொடச் சொல்லவோ கூடாது. உடல்நலம் அல்லது சுத்தத்துக்காக மருத்துவர் அல்லது பெற்றோர், நம்பிக்கையான பெரியவர் முன்னிலையில், உனக்கு முதலில் சொல்லி உதவலாம்.",m:"🛡️",b:["🔒","🛡️","⭐"]},
+safe:{en:"Safe touches feel happy and OK: a high-five, a handshake, a hug you want. You can always say NO, even to people you know.",ta:"பாதுகாப்பான தொடுதல் மகிழ்ச்சியாகவும் சரியாகவும் இருக்கும்: கைதட்டல், கைகுலுக்கல், நீ விரும்பும் அணைப்பு. தெரிந்தவர்களிடமும் நீ எப்போதும் 'வேண்டாம்' என்று சொல்லலாம்.",m:"😊",b:["🤗","✋","🌟"]},
+secret:{en:"A good secret is a happy surprise. A bad secret makes you scared or uncomfortable, or someone says 'don't tell'. Never keep secrets about touching. Tell a trusted adult.",ta:"நல்ல ரகசியம் இனிய ஆச்சரியம். கெட்ட ரகசியம் பயம் அல்லது அசௌகரியம் தரும்; 'யாரிடமும் சொல்லாதே' என்று மிரட்டும். தொடுதல் பற்றிய ரகசியத்தை ஒருபோதும் காக்காதே. நம்பிக்கையான பெரியவரிடம் சொல்.",m:"🤫",b:["🗝️","💛","🛡️"]},
+who:{en:"Trusted adults: mum, dad, a teacher, the school counselor, a relative you feel safe with, or Childline 1098 (free). Pick 3 on the Students page.",ta:"நம்பிக்கையான பெரியவர்கள்: அம்மா, அப்பா, ஆசிரியர், பள்ளி ஆலோசகர், நீ பாதுகாப்பாக உணரும் உறவினர், அல்லது இலவச Childline 1098. மாணவர் பக்கத்தில் 3 பேரைத் தேர்வு செய்.",m:"🤝",b:["👥","💛","🌟"]},
+unsafe:{en:"I'm so glad you told me. It is NOT your fault. You are brave. Say NO and go away, then tell a trusted adult now. Keep telling until someone listens. If you are in danger, call 1098 or 112.",ta:"என்னிடம் சொன்னதில் மகிழ்ச்சி. இது உன் தவறு அல்ல. நீ தைரியசாலி. 'வேண்டாம்' சொல்லி விலகிச் செல், உடனே நம்பிக்கையான பெரியவரிடம் சொல். யாராவது கேட்கும் வரை சொல். ஆபத்தில் இருந்தால் 1098 அல்லது 112 அழை.",m:"🤗",b:["💛","🛡️","🚨"],act:1},
+hello:{en:"Hi! I'm Kaaval Helper. Ask me about body safety. I am a helper, not a person. In danger? Call 1098 or 112.",ta:"வணக்கம்! நான் காவல் உதவியாளர். உடல் பாதுகாப்பு பற்றிக் கேள். நான் மனிதர் அல்ல; ஆபத்தில் இருந்தால் 1098 அல்லது 112 அழை.",m:"😊",b:["👋","🛡️"]},
+fb:{en:"I can answer questions about body safety. Tap one below. If something is wrong, tell a trusted adult or call 1098.",ta:"உடல் பாதுகாப்பு பற்றிய கேள்விகளுக்கு நான் பதிலளிப்பேன். கீழே ஒன்றைத் தட்டு. ஏதாவது தவறாக இருந்தால் நம்பிக்கையான பெரியவரிடம் சொல் அல்லது 1098 அழை.",m:"🛡️",b:["🛡️"]}};
+const QC=[["priv","🔒 What are private parts?","🔒 தனிப்பட்ட பாகங்கள் என்ன?"],["safe","🤗 What is a safe touch?","🤗 பாதுகாப்பான தொடுதல் என்ன?"],["secret","🤫 Good or bad secret?","🤫 நல்ல/கெட்ட ரகசியம்?"],["who","👥 Who can I tell?","👥 யாரிடம் சொல்லலாம்?"],["unsafe","🚨 I feel unsafe","🚨 எனக்குப் பாதுகாப்பற்றதாக உள்ளது"]];
+let sm=null;if(window.claude)claude.use("sample").then(x=>sm=x).catch(()=>{});
+const mood=e=>{$("#mas").textContent=e;$("#mas2").textContent=e};
+function burst(a){a.forEach((e,i)=>{const o=document.createElement("span");o.className="bu";o.textContent=e;o.style.left=15+i*22+Math.random()*10+"%";o.style.animationDelay=i*.15+"s";$("#botp").append(o);setTimeout(()=>o.remove(),2300)})}
+function say(r,t,act){const d=document.createElement("div");d.className="m "+r;d.textContent=t;if(act){const w=document.createElement("div");w.className="ar";[["📞 1098","tel:1098"],["📞 112","tel:112"],["🎙️ "+T("Voice","குரல்"),0],["📝 "+T("Form","படிவம்"),FORM]].forEach(a=>{const e=document.createElement(a[1]?"a":"button");e.textContent=a[0];if(a[1]){e.href=a[1];if(a[1][0]=="h")e.target="_blank"}else e.onclick=()=>{$("#botp").hidden=true;show("voice")};w.append(e)});d.append(w)}$("#log").append(d);$("#log").scrollTop=1e9;return d}
+function ans(k){const o=KB[k];say("bot",T(o.en,o.ta),o.act);mood(o.m);burst(o.b)}
+function chips(){$("#qc").replaceChildren(...QC.map(c=>{const b=document.createElement("button");b.className="chip";b.textContent=T(c[1],c[2]);b.onclick=()=>{say("user",b.textContent);ans(c[0])};return b}));$("#bin").placeholder=T("Type your question…","உன் கேள்வியைத் தட்டச்சு செய்…")}
+async function ask(){const t=$("#bin").value.trim();if(!t)return;$("#bin").value="";say("user",t);
+ let k=/private part|underwear|swimsuit|உள்ளாடை|தனிப்பட்ட/i.test(t)?"priv":/secret|ரகசிய/i.test(t)?"secret":/safe touch|high.?five|hug|பாதுகாப்பான/i.test(t)?"safe":/who|trust|யாரிடம்|நம்பிக்கை/i.test(t)?"who":/touch|hurt|abus|rape|scared|afraid|naked|photo|threat|force|unsafe|uncomfortable|help me|தொட|பயம்|அடி|வலி|மிரட்|உதவி|அசௌகரிய|பாதுகாப்பற்ற/i.test(t)?"unsafe":"";
+ if(k){ans(k);return}
+ if(!sm){ans("fb");return}
+ mood("🤔");const w=say("bot","…");
+ try{const r=await sm("You are Kaaval Helper, a kind assistant for children aged 6-16 on a body-safety website in Tamil Nadu. Reply in "+(L==="en"?"simple English":"simple Tamil")+", maximum 3 short sentences. Only teach body safety: private parts are those covered by underwear or swimsuit; safe and unsafe touch; no secrets about touching; NO-GO-TELL; trusted adults; helplines 1098, 112, 14417. Never ask for details of any incident, never investigate, never give medical or legal advice, never describe anything sexual. If the child hints at harm or fear, say it is not their fault, tell a trusted adult now, and call 1098 or 112. If the question is unrelated, gently steer back to body safety. Child's message: "+t,{modelTier:"quick",cache:false});
+ w.textContent=r.text||T(KB.fb.en,KB.fb.ta);mood("😊");burst(["⭐","🛡️"])}catch(e){w.remove();ans("fb")}}
+$("#botb").onclick=()=>{const p=$("#botp");p.hidden=!p.hidden;if(!p.hidden&&!$("#log").children.length)ans("hello")};
+$("#botx").onclick=()=>$("#botp").hidden=true;$("#bgo").onclick=ask;$("#bin").onkeydown=e=>{if(e.key==="Enter")ask()};
+/* trusted, mood, quiz, checklist */
+const people=[["Mother","அம்மா"],["Father","அப்பா"],["Teacher","ஆசிரியர்"],["Counselor","ஆலோசகர்"],["Relative","உறவினர்"],["Childline 1098","Childline 1098"]];
+const sel=new Set();
+const checks=[["Sudden fear or avoidance of a person/place","ஒரு நபர்/இடத்தை திடீரெனப் பயந்து தவிர்த்தல்"],["Withdrawn, crying, or unusual anger","தனிமை, அழுகை, அசாதாரண கோபம்"],["Sharp drop in marks or attendance","மதிப்பெண்/வருகையில் திடீர் வீழ்ச்சி"],["Age-inappropriate sexual talk or drawings","வயதுக்கு மீறிய பாலியல் பேச்சு/படங்கள்"],["Unexplained injuries or soreness","விளக்கமில்லாத காயம்/வலி"],["Secretive about gifts, phone or messages","பரிசு, ஃபோன், செய்திகள் பற்றி ரகசியம்"]];
+const ticked=new Set();
+function build(){slide();extra();chips();
+$("#trust").innerHTML=people.map((p,i)=>`<button class="chip ${sel.has(i)?"on":""}" data-i="${i}">${T(p[0],p[1])}</button>`).join("");
+$$("#trust .chip").forEach(c=>c.onclick=()=>{const i=+c.dataset.i;sel.has(i)?sel.delete(i):(sel.size<5&&sel.add(i));build()});
+$("#trustmsg").textContent=sel.size?T("Pick up to 5. These are the people you can tell.","5 பேர் வரை தேர்வு செய். இவர்களிடம் நீ சொல்லலாம்."):T("Tap the people you trust.","நம்புபவர்களைத் தட்டு.");
+$("#chk").innerHTML=checks.map((c,i)=>`<label style="display:block;margin:6px 0"><input type="checkbox" data-i="${i}" ${ticked.has(i)?"checked":""}> ${T(c[0],c[1])}</label>`).join("");
+$$("#chk input").forEach(c=>c.onchange=()=>{c.checked?ticked.add(+c.dataset.i):ticked.delete(+c.dataset.i);const r=$("#chkres");r.style.display=ticked.size?"block":"none";r.textContent=ticked.size>=2?T("Several signs noticed. Please speak to your safeguarding committee or counselor and consider raising a complaint on the student's behalf.","பல அறிகுறிகள் உள்ளன. பாதுகாப்புக் குழு/ஆலோசகரிடம் பேசி, மாணவர் சார்பில் புகார் அளிப்பதைப் பரிசீலியுங்கள்."):T("Keep observing gently and note dates. Talk to the counselor if it continues.","மெதுவாகக் கவனித்து தேதிகளைக் குறியுங்கள். தொடர்ந்தால் ஆலோசகரிடம் பேசுங்கள்.")});
+$$("#mood button").forEach(b=>b.onclick=()=>{$$("#mood button").forEach(x=>x.classList.remove("on"));b.classList.add("on")})}
+build();
+/* voice note */
+let mr,chunks=[],blob,stream,stop,db=null;
+if(window.claude)claude.use("db").then(d=>db=d).catch(()=>{});
+const msg=(t,e)=>{$("#recmsg").innerHTML=`<e>${t}</e><t>${e}</t>`};
+const BL=e=>{const n=e&&e.name||"unsupported";msg("Microphone blocked here ("+n+"). Tap the 📱 phone voice recorder button. It works without microphone access.","மைக் இங்கே தடுக்கப்பட்டுள்ளது ("+n+"). 📱 ஃபோன் குரல் பதிவி பொத்தானைத் தட்டவும்; அதற்கு மைக் அனுமதி தேவையில்லை.")};
+function ready(b){blob=b;$("#aud").src=URL.createObjectURL(b);$("#aud").style.display="block";$("#sendbox").style.display="block";msg("Listen, then send or record again.","கேட்டு, அனுப்பவும் அல்லது மீண்டும் பதிவு செய்யவும்.")}
+$("#allow").onclick=async()=>{
+ if(!navigator.mediaDevices||!window.MediaRecorder){BL();return}
+ try{const t=await navigator.mediaDevices.getUserMedia({audio:true});t.getTracks().forEach(x=>x.stop());$("#step1").style.display="none";$("#step2").style.display="block";msg("Microphone ready. Tap the big button to start.","மைக் தயார். பெரிய பொத்தானைத் தட்டித் தொடங்குங்கள்.")}catch(e){BL(e)}};
+$("#rec").onclick=async()=>{
+ if(mr&&mr.state==="recording"){mr.stop();return}
+ try{stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];try{mr=new MediaRecorder(stream,{audioBitsPerSecond:16000})}catch(e){mr=new MediaRecorder(stream)}}catch(e){BL(e);return}
+ mr.ondataavailable=e=>chunks.push(e.data);
+ mr.onstop=()=>{clearTimeout(stop);stream.getTracks().forEach(t=>t.stop());$("#rec").classList.remove("live");ready(new Blob(chunks,{type:mr.mimeType||"audio/webm"}))};
+ mr.start();$("#rec").classList.add("live");msg("Recording… tap to stop","பதிவாகிறது… நிறுத்தத் தட்டவும்");stop=setTimeout(()=>mr.state==="recording"&&mr.stop(),45000)};
+$("#fil").onchange=e=>{const f=e.target.files[0];if(f)ready(f)};
+$("#redo").onclick=()=>{$("#aud").style.display="none";$("#sendbox").style.display="none";$("#sendmsg").textContent="";msg("Tap to start","தொடங்கத் தட்டவும்")};
+$("#send").onclick=()=>{
+ if(blob.size>180000){$("#sendmsg").textContent=T("Recording is too long. Please record a shorter note.","பதிவு நீளமாக உள்ளது. சுருக்கமாகப் பதிவு செய்யுங்கள்.");return}
+ if(!db){$("#sendmsg").textContent=T("The backend is not connected in this view. Your recording was not sent.","பின்தளம் இணைக்கப்படவில்லை. உங்கள் பதிவு அனுப்பப்படவில்லை.");return}
+ const fr=new FileReader();fr.onload=async()=>{try{await db.doc("voiceComplaints/"+Date.now().toString(36)+Math.random().toString(36).slice(2,6)).set({audio:fr.result,createdAt:Date.now(),lang:L,status:"new",anonymous:true});
+ $("#sendmsg").textContent=T("Sent. Thank you for telling us. You were brave. It is not your fault. If you are in danger now, call 1098 or 112.","அனுப்பப்பட்டது. சொன்னதற்கு நன்றி. நீ தைரியசாலி. இது உன் தவறு அல்ல. ஆபத்தில் இருந்தால் உடனே 1098 அல்லது 112 அழை.");$("#sendbox").style.display="none"}
+ catch(e){$("#sendmsg").textContent=T("Could not send. Please try again or use the form.","அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும் அல்லது படிவத்தைப் பயன்படுத்தவும்.")}};
+ fr.readAsDataURL(blob)};
+document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a||a.id==="calla")return;e.preventDefault();const n=a.getAttribute("href").slice(4);$("#cn").textContent=n;$("#calla").href="tel:"+n;$("#cmsg").textContent="";$("#call").hidden=false;$("#callc").onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(n):Promise.reject()).then(()=>$("#cmsg").textContent=T("Copied","நகலெடுக்கப்பட்டது"),()=>$("#cmsg").textContent=n)}});
+$("#callx").onclick=()=>$("#call").hidden=true;
+</script>
+</body>
+</html>
